@@ -7,7 +7,11 @@ from snowflake.snowpark.functions import col
 #session = cnx.session()
 
 #conn = st.connection("my_connection", type="snowflake")
-
+connection_parrameters={
+    "account":"dffd"
+    "user":"dsfsd"
+    "password":"df"
+    }
 
 # Write directly to the app
 #Header 
