@@ -5,10 +5,9 @@ from snowflake.snowpark.functions import col
 
 #cnx = st.connection("snowflake")
 #session = cnx.session()
-conn = st.connection(
-    "snowflake", account="GBKRMLK-SAB33174", user="nileshd", password="Pass@1234"
-)
-session = conn.session()
+
+conn = st.connection("my_connection", type="snowflake")
+
 
 # Write directly to the app
 #Header 
