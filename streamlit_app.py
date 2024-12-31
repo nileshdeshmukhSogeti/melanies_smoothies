@@ -1,18 +1,18 @@
 # Import python packages
 import streamlit as st
-#from snowflake.snowpark.context import get_active_session
+from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 
 #cnx = st.connection("snowflake")
 #session = cnx.session()
 
 #conn = st.connection("my_connection", type="snowflake")
-connection_parrameters={
-    "account":"dffd"
-    "user":"dsfsd"
-    "password":"df"
+connection_parameters={
+    "account":"GBKRMLK-SAB33174",
+    "user":"nileshd",
+    "password":"df",
     }
-
+#new_session = Session.builder.configs()
 # Write directly to the app
 #Header 
 
@@ -26,7 +26,7 @@ name_on_order = st.text_input("Name on Smoothie")
 st.write("This name will be on Smoothie", name_on_order)
 
 
-#session = get_active_session()
+session = get_active_session()
 #my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))#**To select only specific col data from a table 
 #st.dataframe(data=my_dataframe, use_container_width=True) #**To draw the table using data from my_dataframe
 
