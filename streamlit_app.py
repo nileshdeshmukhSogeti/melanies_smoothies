@@ -25,18 +25,3 @@ warehouse = os.getenv("SNOWFLAKE_WAREHOUSE")
 database = os.getenv("SNOWFLAKE_DATABASE")
 schema = os.getenv("SNOWFLAKE_SCHEMA")
 
-# Establish Snowflake connection
-def create_connection():
-    try:
-        conn = snowflake.connector.connect(
-            user=user,
-            password=password,
-            account=account,
-            warehouse=warehouse,
-            database=database,
-            schema=schema
-        )
-        return conn
-    except Exception as e:
-        print(f"Error connecting to Snowflake: {e}")
-        return None
