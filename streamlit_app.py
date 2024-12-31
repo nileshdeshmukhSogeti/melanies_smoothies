@@ -10,7 +10,7 @@ from snowflake.snowpark.functions import col
 connection_parameters={
     "account":"GBKRMLK-SAB33174",
     "user":"nileshd",
-    "password":"df",
+    "password":"df"
     }
 #new_session = Session.builder.configs()
 # Write directly to the app
