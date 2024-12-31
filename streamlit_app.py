@@ -1,17 +1,11 @@
-# Import python packages
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
-from snowflake.snowpark.functions import col
 
-# Write directly to the app
-#Header 
+# Display the smoothie logo at the top
+logo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Smoothie_logo.svg/1200px-Smoothie_logo.svg.png"  # Replace with your logo URL or local file path
+st.image(logo_url, width=200)  # Adjust the width as per your logo size
 
-st.title(":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
-st.write(
-    "Choose the fruits you want in your custom Smoothie!"
-)
+# Title of the app
+st.title("Smoothie Selector")
 
-
-name_on_order = st.text_input("Name on Smoothie")
-st.write("This name will be on Smoothie", name_on_order)
-
+# Create a dropdown (selectbox) for the user to choose a smoothie type
+smoothie_choice = st.selectbox("Select a smoothie to view:", ["Mango Smoothie", "Berry Blast Smoothie", "Green Smoothie", "Tropical Smoothie"])
