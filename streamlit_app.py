@@ -9,3 +9,34 @@ st.title("Smoothie Selector")
 
 # Create a dropdown (selectbox) for the user to choose a smoothie type
 smoothie_choice = st.selectbox("Select a smoothie to view:", ["Mango Smoothie", "Berry Blast Smoothie", "Green Smoothie", "Tropical Smoothie"])
+
+import os
+import snowflake.connector
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Snowflake connection details from environment variables
+user = os.getenv("SNOWFLAKE_USER")
+password = os.getenv("SNOWFLAKE_PASSWORD")
+account = os.getenv("SNOWFLAKE_ACCOUNT")
+warehouse = os.getenv("SNOWFLAKE_WAREHOUSE")
+database = os.getenv("SNOWFLAKE_DATABASE")
+schema = os.getenv("SNOWFLAKE_SCHEMA")
+
+# Establish Snowflake connection
+def create_connection():
+    try:
+        conn = snowflake.connector.connect(
+            user=user,
+            password=password,
+            account=account,
+            warehouse=warehouse,
+            database=database,
+            schema=schema
+        )
+        return conn
+    except Exception as e:
+        print(f"Error connecting to Snowflake: {e}")
+        return None
