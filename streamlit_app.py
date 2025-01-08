@@ -20,9 +20,9 @@ st.write("This name will be on Smoothie", name_on_order)
 cnx = st.connection("snowflake")
 session = cnx.session()
 
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))#**To select only specific col data from a table 
-#st.dataframe(data=my_dataframe, use_container_width=True) #**To draw the table using data from my_dataframe
-
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))#**To select only specific col data from a table 
+st.dataframe(data=my_dataframe, use_container_width=True) #**To draw the table using data from my_dataframe
+st.stop()
 
 
 
