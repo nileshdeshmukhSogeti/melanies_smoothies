@@ -42,7 +42,7 @@ if ingredients_list: #Handle indent of visuals if ingredients_list is not null: 
     for fruit_chosen in ingredients_list: 
         ingredients_string += fruit_chosen + ' ' #+= add text to earlier selected text in loop
         st.subheader(fruit_chosen + ' Nutrition Information')
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen)
         sf_df = st.dataframe(data=smoothiefroot_response.json(),use_container_width= True)
         #st.write(ingredients_string)
 
